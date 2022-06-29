@@ -70,10 +70,13 @@ const useStyles = makeStyles((theme) => ({
     },
     img: {
         height: "auto",
-        width: "73vw",
-        textAlign: "center"
+        width: "50vw",
+        textAlign: "center",
+        marginLeft: '40%'
+
     },
     h2: {
+        marginLeft: '40%',
         fontFamily: `serif`,
         color: "white",
         fontSize: "2.6vw",

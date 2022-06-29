@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
         // height: "50vh",
         // maxHeight: "100vh"
         paddingBottom: "5vh",
-        display: "flex"
+        display: "flex",
+        justifyContent: "end"
 
     },
     img: {
@@ -81,12 +82,12 @@ const About = () => {
 
             </div>
             <div style={{paddingLeft: "5vw"}}>
-            <model-viewer id="size"
+            {/* <model-viewer id="size"
                 src={require("./Kit.glb")}
                 camera-controls
                 disable-zoom
                 auto-rotate
-            ></model-viewer>
+            ></model-viewer> */}
             </div>
 
 
