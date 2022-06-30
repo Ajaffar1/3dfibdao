@@ -22,9 +22,12 @@ const useStyles = makeStyles((theme) => ({
     // height: "50vh",
     // maxHeight: "100vh"
     paddingBottom: "5vh",
+    displya: 'flex',
+    flexDirection: 'column'
   },
   row: {
     display: "flex",
+    width: '45%'
     // alignItems: "center"
   },
   images: {
@@ -61,6 +64,11 @@ const useStyles = makeStyles((theme) => ({
     textSizeAdjust: "auto"
 
   },
+  content : {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '50px'
+  }
 
 }));
 export default function () {
@@ -77,48 +85,49 @@ export default function () {
 
     <div className={classes.root}>
       <h2 className={classes.h1}>FIBDAO Roadmap</h2>
-      <div className={classes.row}>
-        <img className={classes.images} src="images/Web_Image_Renders_02.png" />
-        <div>
-          <h2 className={classes.h2}>Our Vision and Value</h2>
-          <p className={classes.p}>Everything starts and ends with the community. The moment we prioritize
-            something other than the community will be the beginning of the end. We wont let that happen,
-            because we're giving the community an opportunity to become a VC</p>
+      <div className={classes.content}>
+        <div className={classes.row}>
+          {/* <img className={classes.images} src="images/Web_Image_Renders_02.png" /> */}
+          <div>
+            <h2 className={classes.h2}>Our Vision and Value</h2>
+            <p className={classes.p}>Everything starts and ends with the community. The moment we prioritize
+              something other than the community will be the beginning of the end. We wont let that happen,
+              because we're giving the community an opportunity to become a VC</p>
+          </div>
+        </div>
+        <div className={classes.row}>
+          {/* <img className={classes.images} src="images/Web_Image_Renders_03.png" /> */}
+          <div>
+            <h2 className={classes.h2}>Venture Capital Opportunity</h2>
+            <p className={classes.p}>Our goal is to build the very first dao that lets our community to decide 
+            what occurs with its treasury, In the long term, we believe this DAO can be optimzed for stability within the NFT space.</p>
+          </div>
+        </div>
+        <div className={classes.row}>
+          {/* <img className={classes.images} src="images/Web_Image_Renders_01.png" /> */}
+          <div>
+            <h2 className={classes.h2}>Inital Public Offering (I.P.O)</h2>
+            <p className={classes.p}>In order to make this service available to the public, we will be offering 5,555 NFTs that will have 
+            the ability to stake and earn FBD. The more FBD, you accumulate, the more power you will withold when it comes to governance decisions.</p>
+          </div>
+        </div>
+        <div className={classes.row}>
+          {/* <img className={classes.images} src="images/Web_Image_Renders_04.png" /> */}
+          <div>
+            <h2 className={classes.h2}>METAVERSE</h2>
+            <p className={classes.p}>Everything starts and ends with the community. The moment we prioritize something other than the community will be 
+            the beginning of the end. We wont let that happen, because we're giving the community an opportunity to become a VC</p>
+          </div>
+        </div>
+        <div className={classes.row}>
+          {/* <img className={classes.images} src="images/Web_Image_Renders_05.png" /> */}
+          <div>
+            <h2 className={classes.h2}>Bridge Between Fibdao and YOU</h2>
+            <p className={classes.p}>Our goal is to build the very first dao that gives away the its treasury in increments of prizes such as cars, ticket 
+            events, NFTs. We will be native on the MATIC network. In the long term, we believe this DAO can be optimzed for stability within the NFT space</p>
+          </div>
         </div>
       </div>
-      <div className={classes.row}>
-        <img className={classes.images} src="images/Web_Image_Renders_03.png" />
-        <div>
-          <h2 className={classes.h2}>Venture Capital Opportunity</h2>
-          <p className={classes.p}>Our goal is to build the very first dao that lets our community to decide 
-          what occurs with its treasury, In the long term, we believe this DAO can be optimzed for stability within the NFT space.</p>
-        </div>
-      </div>
-      <div className={classes.row}>
-        <img className={classes.images} src="images/Web_Image_Renders_01.png" />
-        <div>
-          <h2 className={classes.h2}>Inital Public Offering (I.P.O)</h2>
-          <p className={classes.p}>In order to make this service available to the public, we will be offering 5,555 NFTs that will have 
-          the ability to stake and earn FBD. The more FBD, you accumulate, the more power you will withold when it comes to governance decisions.</p>
-        </div>
-      </div>
-      <div className={classes.row}>
-        <img className={classes.images} src="images/Web_Image_Renders_04.png" />
-        <div>
-          <h2 className={classes.h2}>METAVERSE</h2>
-          <p className={classes.p}>Everything starts and ends with the community. The moment we prioritize something other than the community will be 
-          the beginning of the end. We wont let that happen, because we're giving the community an opportunity to become a VC</p>
-        </div>
-      </div>
-      <div className={classes.row}>
-        <img className={classes.images} src="images/Web_Image_Renders_05.png" />
-        <div>
-          <h2 className={classes.h2}>Bridge Between Fibdao and YOU</h2>
-          <p className={classes.p}>Our goal is to build the very first dao that gives away the its treasury in increments of prizes such as cars, ticket 
-          events, NFTs. We will be native on the MATIC network. In the long term, we believe this DAO can be optimzed for stability within the NFT space</p>
-        </div>
-      </div>
-
     </div>
   );
 }

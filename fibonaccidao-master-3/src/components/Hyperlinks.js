@@ -5,7 +5,8 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         padding: "0vh 11vw 0vh 11vw",
         textAlign: "center",
-        background: "black"
+        background: "black",
+        display: 'flex'
     },
     icon: {
         paddingTop:"5vw",
@@ -22,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Hyperlinks = () => {
     const classes = useStyles();
-
-    
-
     return (
         <div className={classes.container}>
             <a href="https://twitter.com/FibDao">

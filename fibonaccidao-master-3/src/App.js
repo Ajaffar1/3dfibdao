@@ -2,6 +2,7 @@
 import React, { Suspense, useRef, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
+import * as THREE from "three";
 import Header from './components/Header';
 import About from './components/About';
 import Information from './components/Information';
@@ -15,9 +16,10 @@ import Modal from './components/Modal';
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn } from "react-scroll-motion";
 import MetaTags from 'react-meta-tags';
 import Roadmap from './components/Roadmap';
+import "@google/model-viewer/dist/model-viewer";
+
 const ZoomInScrollOut = batch(StickyIn(), FadeIn());
 const FadeUp = batch(Fade(), Move());
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundAttachment: "fixed",
-    backgroundImage: "linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), urL('/images/bg.jpg')"
+    // backgroundImage: "linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), urL('/images/bg.jpg')"
   },
 }));
 
@@ -35,60 +37,31 @@ const useStyles = makeStyles((theme) => ({
 
 export default function App() {
   const classes = useStyles();
+
   return (
-
-
     <div id="wrapper">
-      <MetaTags>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </MetaTags>
-      <div className={classes.root}>
-        <ScrollContainer>
-          <ScrollPage page={0}>
-            <Animator animation={FadeUp}>
-              <CssBaseline />
-              <Header />
-            </Animator>
-          </ScrollPage>
-
-          {/* <ScrollPage page={1}>
-            <Animator animation={batch(FadeIn())}>
-              <About />
-            </Animator>
-          </ScrollPage> */}
-        </ScrollContainer>
+       <div className={classes.root}>
+        <model-viewer id="size_bg"
+          src={require("./components/Kit.glb")}
+          disable-zoom
+          auto-rotate
+        >
+          <div className={classes.root}>
+            <Header />
+          </div>
+        </model-viewer>
         <About />
         <Information />
-
-          {/* <ScrollPage page={2}>
-            <Animator animation={batch(FadeIn())}> */}
         <Distribution />
-            {/* </Animator>
-          </ScrollPage> */}
-
-          {/* <ScrollPage page={3}>
-            <Animator animation={batch(FadeIn())}> */}
         <Roadmap />
-            {/* </Animator>
-          </ScrollPage> */}
-
-          {/* <ScrollPage page={4}>
-            <Animator animation={batch(FadeIn())}> */}
-        
-            {/* </Animator>
-          </ScrollPage> */}
           <GHSProvider>
-          {/* <ScrollPage page={5}>
-            <Animator animation={batch(FadeIn())}> */}
           <Modal><Newsletter/></Modal>
-       
-            {/* </Animator>
-          </ScrollPage> */}
-        
         </GHSProvider>
-        
         <Hyperlinks/>
-      </div>
+       </div>
     </div>
+    
+
+    
   );
 }

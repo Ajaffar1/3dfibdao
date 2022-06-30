@@ -6,7 +6,6 @@ import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 const useStyles = makeStyles((theme) => ({
     container: {
         content: "",
-        display: "table",
         clear: "both",
         boxSizing: "borderBox",
         // height:"45vh",
@@ -15,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
         // backgroundColor: 'rgba(255, 255, 255, 0.8)',
         backgroundColor: "#000",
         padding: "5vh 0vw 5vh 11vw",
+        display: "flex",
+        flexDirection: "column"
     },
     column: {
         float: "left",
@@ -46,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: `Judson, serif`,
         color: "white",
         fontSize: "1vw",
-        textSizeAdjust: "auto"
+        textSizeAdjust: "auto",
+        maxWidth: '500px'
 
     },
     button: {
@@ -62,6 +64,13 @@ const useStyles = makeStyles((theme) => ({
         "fontSize": "16px",
         "userSelect": "none",
         fontWeight: "bold"
+    },
+    avatars : {
+        width: '45%',
+    },
+    preSale: {
+        width: '45%',
+        marginLeft: '40%'
     }
 
 }));
@@ -71,7 +80,7 @@ const Information = () => {
     const classes = useStyles();
     return (
         <div className={classes.container}>
-            <div className={classes.column}>
+            <div className={classes.avatars}>
                 <SavedSearchOutlinedIcon style={{ fontSize: 50, color:"#FF0040", marginBottom: "0"}} />
                 <h2 className={classes.h2}>5,555 Special Avatars</h2>
                 <h3 className={classes.h3}>Which Avatar will you take to space?</h3>
@@ -82,7 +91,7 @@ const Information = () => {
                     <button className={classes.button}>See More</button>
                 </a> */}
             </div>
-            <div className={classes.column}>
+            <div className={classes.preSale}>
                 <BookmarkAddedOutlinedIcon style={{ fontSize: 50, color:"#FF0040", marginBottom: "0"}}/>
                 <h2 className={classes.h2}>Pre-Sale</h2>
                 <h3 className={classes.h3}>05.22.22</h3>
@@ -92,7 +101,7 @@ const Information = () => {
                     <button className={classes.button}>See More</button>
                 </a> */}
             </div>
-            <div className={classes.column}>
+            <div className={classes.design}>
                 <CreateOutlinedIcon style={{ fontSize: 50, color:"#FF0040", marginBottom: "0"}}/>
                 <h2 className={classes.h2}>Design & Features</h2>
                 <h3 className={classes.h3}>Special Access for FibDao Holders!</h3>

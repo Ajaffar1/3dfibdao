@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
+    // height: '100vh',
     fontFamily: 'Nunito'
   },
   appbar: {
@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   appbarTitle: {
     flexGrow: '1',
-    
+    display: 'flex',
+    gap:'5px'
   },
   icon: {
     color: '#fff',
@@ -63,7 +64,45 @@ const useStyles = makeStyles((theme) => ({
     },
     height: '40px',
     width: '40px'
-}
+  },
+  menu : {
+    zIndex: '4',
+    marginRight: '24px',
+    marginTop: '24px',
+    alignItems: 'center',
+    marginRight: '30px',
+    marginTop: '25px',
+  },
+  presale : {
+    position: 'relative',
+    outline: 'none',
+    border: 'none',
+    padding: '16px',
+    paddingTop: '18px',
+    paddingLeft: '32px',
+    paddingRight: '32px',
+    borderRadius: '2px',
+    fontFamily: 'MoriGothic',
+    fontSize: "14px",
+    letterSpacing: ".4px",
+    fontWeight: 'bold',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    textTransform: 'uppercase',
+    clipPath: 'polygon(3% 0, 100% 0, 100% 80%, 94% 100%, 50% 100%, 0 100%, 0 10%)',
+    transition: 'background .5s,color .5s',
+    color: '#878787',
+  },
+  appTitle : {
+    display: 'flex'
+  },
+  titlefib : {
+    color: 'white'
+  },
+  dao : {
+    color: '#FF0040'
+  }
 }));
 
 export default function Header() {
@@ -79,13 +118,20 @@ export default function Header() {
     <div className={classes.root} id="Header">
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
+     
           <h1 className={classes.appbarTitle}>
             <a href="https://www.fibdao.io"><img className={classes.icon} src="/images/fibdao_logo.png"/></a>
+            <span className={classes.titlefib}>FIB</span>
+            <span className={classes.dao}>DAO</span>
           </h1>
-
-          <a><SocialIcon className={classes.icon} url="https://www.instagram.com/fibdao/" style={{ height: 40, width: 40}} bgColor="#FF0055" fgColor="#FFFFFF"/></a>
+          <div  className={classes.menu} >
+          <button type="button" name="REVEAL" className={classes.presale}>
+              REVEAL
+          </button>
+          </div>
+          {/* <a><SocialIcon className={classes.icon} url="https://www.instagram.com/fibdao/" style={{ height: 40, width: 40}} bgColor="#FF0055" fgColor="#FFFFFF"/></a>
           <a><SocialIcon className={classes.icon} url="https://twitter.com/fibdao" style={{ height: 40, width: 40}} bgColor="#FF0055" fgColor="#FFFFFF"/></a>
-          <a><SocialIcon className={classes.icon} url="https://discord.gg/hAURy3jVKe" style={{ height: 40, width: 40}} bgColor="#FF0055" fgColor="#FFFFFF"/></a>
+          <a><SocialIcon className={classes.icon} url="https://discord.gg/hAURy3jVKe" style={{ height: 40, width: 40}} bgColor="#FF0055" fgColor="#FFFFFF"/></a> */}
 
         </Toolbar>
       </AppBar>
